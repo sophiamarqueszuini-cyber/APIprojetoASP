@@ -1,8 +1,29 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model IEnumerable<Postagem>
+
+@{
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<header class="p-3 bg-dark text-white text-center">
+    <h2> Bem-Vindo ao projeto API </h2>
+</header>
+<main class="container my-5">
+    <div class="row">
+        @foreach (var post in Model)
+        {
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">@post.Title </h5>
+                    <p class="card-text">@post.Body</p>
+                </div>
+            </div>
+        }
+    </div>
+</main>
+
+<footer class="footer mt-auto py-3 bg-light text-center">
+    <div class="container">
+        <span>&copy; -2026</span>;
+    </div>
+</footer>
+ 
